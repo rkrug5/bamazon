@@ -34,7 +34,7 @@ INSERT INTO books (title, author, `yearPublished`, price, rating, quantity)
 VALUES ("Python Crash Course: A Hands-On, Project-Based Introduction to Programming", "Eric Matthes", 2015, 27.16, 4.5, 10);
 
 INSERT INTO books (title, author, `yearPublished`, price, rating, quantity)
-VALUES ("Automate the Boring Stuff with Python: Practical Programming for Total Beginners", 2015, 23.96, 4.6, 10);
+VALUES ("Automate the Boring Stuff with Python: Practical Programming for Total Beginners", "Al Sweigart", 2015, 23.96, 4.6, 10);
 
 INSERT INTO books (title, author, `yearPublished`, price, rating, quantity)
 VALUES ("Fahrenheit 451", "Ray Bradbury", 2012, 8.99, 4.4, 10);
