@@ -7,8 +7,8 @@ CREATE DATABASE bamazonDB;
 USE bamazonDB;
 
 
-CREATE TABLE products (
-	productId INT AUTO_INCREMENT NOT NULL PRIMARY KEY, 
+CREATE TABLE books (
+	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, 
 	title VARCHAR(100) NOT NULL, 
 	author VARCHAR (100) NOT NULL, 
 	`yearPublished` INT (4) NOT NULL, 
@@ -28,13 +28,13 @@ INSERT INTO books (title, author, `yearPublished`, price, rating, quantity)
 VALUES ("You Don't Know JS: Up & Going", "Kyle Simpson", 2015, 4.79, 4.6, 10);
 
 INSERT INTO books (title, author, `yearPublished`, price, rating, quantity)
-VALUES ("The Linux Command Line: A Complete Introduction", "William E. Shotts Jr. ", 2012, 31.96, 4.7, 10);
+VALUES ("The Linux Command Line", "William E. Shotts Jr. ", 2012, 31.96, 4.7, 10);
 
 INSERT INTO books (title, author, `yearPublished`, price, rating, quantity)
-VALUES ("Python Crash Course: A Hands-On, Project-Based Introduction to Programming", "Eric Matthes", 2015, 27.16, 4.5, 10);
+VALUES ("Python Crash Course", "Eric Matthes", 2015, 27.16, 4.5, 10);
 
 INSERT INTO books (title, author, `yearPublished`, price, rating, quantity)
-VALUES ("Automate the Boring Stuff with Python: Practical Programming for Total Beginners", "Al Sweigart", 2015, 23.96, 4.6, 10);
+VALUES ("Automate the Boring Stuff with Python", "Al Sweigart", 2015, 23.96, 4.6, 10);
 
 INSERT INTO books (title, author, `yearPublished`, price, rating, quantity)
 VALUES ("Fahrenheit 451", "Ray Bradbury", 2012, 8.99, 4.4, 10);
