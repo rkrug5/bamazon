@@ -95,83 +95,88 @@ function exitFunc() {
 
 function buyFunc() {
 	inquirer
-		.prompt([{
+		.prompt({
 			name: "buyingChoice",
 			type: "input",
 			message: "What item would you like to purchase?\n(please enter the item's id #)"
-		},
-		{
-			name: "howMany",
-			type: "input",
-			message: "How many of them would you like?"
-
-		}])
+		}
+		)
 		.then(function (response) {
 
-
-			var which = parseInt(response.buyingChoice);
-			var howMany = parseInt(response.howMany);
-
-
-			var query = connection.query("SELECT * FROM books WHERE ?", {
-				id: response.buyingChoice
-			},
-				function (err, res) {
-					var price = res[0].price;
-					var quantity = res[0].quantity;
-					var cost = howMany * price;
-					var stockLeft = quantity - howMany;
-
-					if (quantity >= howMany) {
-						console.log("The cost of you purchase today is: $" + cost);
-
-						//update the db to reflect the sold items
-						var query = connection.query("UPDATE books SET ? WHERE ?", [{ quantity: stockLeft },
-						{
-							id: response.buyingChoice
-						}]
-						)
+			if (response.buyingChoice === 1) {
+				// buyIt();
+				console.log("works");
+			}
 
 
+			else {
+				console.log("Please enter a valid selection");
+			}
 
 
-
-					}
-
-					else {
-						console.log("Sorry, we don't have that many. \n Please contact the manager about special orders.")
-					}
+			// var which = parseInt(response.buyingChoice);
+			// var howMany = parseInt(response.howMany);
 
 
+			// var query = connection.query("SELECT * FROM books WHERE ?", {
+			// 	id: response.buyingChoice
+			// },
+			// 	function (err, res) {
+			// 		var price = res[0].price;
+			// 		var quantity = res[0].quantity;
+			// 		var cost = howMany * price;
+			// 		var stockLeft = quantity - howMany;
 
-					buySomethingElse();
-					// console.log(price);
-					// console.log(price);
-				}
-			)
+			// 		if (quantity >= howMany) {
+			// 			console.log("The cost of you purchase today is: $" + cost);
 
-
-			// function (err, res) {
-			// 	var price = answer[0].price;
-			// 	var total = price * answer.howMany
+			// 			//update the db to reflect the sold items
+			// 			var query = connection.query("UPDATE books SET ? WHERE ?", [{ quantity: stockLeft },
+			// 			{
+			// 				id: response.buyingChoice
+			// 			}]
+			// 			)
 
 
 
-			// 	if (numberInStock > answer.howMany) {
-
-			// 		console.log("Thank You, Your total is: $" + total);
-			// 	}
-
-			// 	else {
 
 
-			// 		console.log("Sorry, we don't have that many in stock");
-			// 	}
+			// 		}
 
-		})
+			// 		else {
+			// 			console.log("Sorry, we don't have that many. \n Please contact the manager about special orders.")
+			// 		}
 
+
+			// buyIt();
+			// buySomethingElse();
+			// console.log(price);
+			// console.log(price);
+		}
+		)
 
 }
+// function (err, res) {
+// 	var price = answer[0].price;
+// 	var total = price * answer.howMany
+
+
+
+// 	if (numberInStock > answer.howMany) {
+
+// 		console.log("Thank You, Your total is: $" + total);
+// 	}
+
+// 	else {
+
+
+// 		console.log("Sorry, we don't have that many in stock");
+// 	}
+
+
+
+
+
 
 
 // connection.end();
@@ -199,6 +204,47 @@ function buySomethingElse() {
 			}
 
 
+
+		})
+}
+
+function buyIt() {
+
+
+	var which = parseInt(response.buyingChoice);
+	var howMany = parseInt(response.howMany);
+
+
+	var query = connection.query("SELECT * FROM books WHERE ?", {
+		id: response.buyingChoice
+	},
+		function (err, res) {
+			var price = res[0].price;
+			var quantity = res[0].quantity;
+			var cost = howMany * price;
+			var stockLeft = quantity - howMany;
+
+			if (quantity >= howMany) {
+				console.log("The cost of you purchase today is: $" + cost);
+
+				//update the db to reflect the sold items
+				var query = connection.query("UPDATE books SET ? WHERE ?", [{ quantity: stockLeft },
+				{
+					id: response.buyingChoice
+				}]
+				)
+
+
+
+
+
+			}
+
+			else {
+				console.log("Sorry, we don't have that many. \n Please contact the manager about special orders.")
+			}
+
+			buySomethingElse();
 
 		})
 }
