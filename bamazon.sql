@@ -17,6 +17,19 @@ CREATE TABLE books (
 	quantity INT (10)
 );
 
+CREATE TABLE `departments` (
+	department_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	department_name VARCHAR (30) NOT NULL, 
+	over_head_costs FLOAT (20, 2)
+
+
+)
+
+
+
+
+
+
 
 INSERT INTO books (title, author, `yearPublished`, price, rating, quantity)
 VALUES ("Eloquent JavaScript", "Marijn Haverbeke", 2014, 31.96, 4.2, 10);
@@ -50,3 +63,5 @@ VALUES ("Brain Droppings", "George Carlin", 1998, 13.20, 4.3, 10);
 
 
 SELECT * FROM products;
+
+DELETE FROM books WHERE id = 11;
