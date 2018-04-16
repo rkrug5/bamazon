@@ -2,7 +2,7 @@
 
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-
+var a = 1;
 
 var connection = mysql.createConnection({
 	host: "localhost",
@@ -84,6 +84,7 @@ function displayProducts() {
 
 	})
 
+	connection.end();
 
 }
 
@@ -117,7 +118,7 @@ function addInventory() {
 		{
 			name: "restockAmount",
 			type: "input",
-			message: "How many are adding?"
+			message: "How many are you adding?"
 
 		}])
 		.then(function (answer) {
@@ -125,33 +126,62 @@ function addInventory() {
 			var restockAmount = parseInt(answer.restockAmount);
 
 
-			connection.query('SELECT * FROM books WHERE id = identity', function (err, data) {
-				var currentNumber = data.quantity;
-				var newTotal = restockAmount + currentNumber;
+			var query = connection.query("SELECT * FROM books WHERE ?", {
+				id: answer.restock
+			},
 
+				function (err, res) {
+					var stock = res[0].quantity;
+					var restockId = res[0].id
+					var newStock = stock + restockAmount;
+					console.log(newStock);
 
-				var query = connection.query(
-					"UPDATE products SET ? WHERE ?",
-					[
+					if (a == 1) {
+						var query = connection.query("UPDATE books SET ? WHERE ?", [{ quantity: newStock },
 						{
-							quantity: newTotal
-						},
-						{
-							id: answer.restock
-						}
-					],
-					function (err, res) {
-						console.log(" products updated!");
-						// Call deleteProduct AFTER the UPDATE completes
-						//   deleteProduct();
+							id: restockId
+						}]
+						)
+
+						connection.end();
 					}
-				);
-
-			})
-
+				}
+			)
 		})
-
 }
+// var query = connection.query(
+// 	"UPDATE products SET ? WHERE ?",
+// 	[
+// 		{
+// 			quantity: newTotal
+// 		},
+// 		{
+// 			id: answer.restock
+// 		}
+// 	],
+// 	function (err, res) {
+// 		console.log(" products updated!");
+
+// 		console.log(
+// 			"Id: " + data.id +
+// 			"  " + data.title +
+
+
+// 			" || Quantity: " +
+// 			data.quantity
+
+// 		);
+
+// Call deleteProduct AFTER the UPDATE completes
+//   deleteProduct();
+// 		}
+// 		);
+
+// })
+
+// })
+
+// }
 
 function addProduct() {
 

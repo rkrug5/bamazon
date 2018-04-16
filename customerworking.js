@@ -40,7 +40,7 @@ function displayProducts() {
 		}
 		// console.log(data);
 
-		for (var i = 0; i < 10; i++) {
+		for (var i = 0; i < data.length; i++) {
 			console.log(
 				"Id: " + data[i].id +
 				"  " + data[i].title +
@@ -124,7 +124,7 @@ function buyFunc() {
 					var stockLeft = quantity - howMany;
 
 					if (quantity >= howMany) {
-						console.log("The cost of you purchase today is: $" + cost);
+						console.log("The cost of your purchase today is: $" + cost);
 
 						//update the db to reflect the sold items
 						var query = connection.query("UPDATE books SET ? WHERE ?", [{ quantity: stockLeft },
