@@ -89,21 +89,25 @@ function displayProducts() {
 }
 
 function lowInventory() {
-	connection.query('SELECT * FROM books WHERE quantity < 10', function (err, data) {
+	connection.query('SELECT * FROM books WHERE quantity < 5', function (err, data) {
+
+		if (err) throw err;
+
 		for (let i = 0; i < data.length; i++) {
 			console.log(
 				"Id: " + data[i].id +
 				"  " + data[i].title +
-
-
+				" || Author: " +
+				data[i].author +
+				" || Price: " +
+				data[i].price +
 				" || Quantity: " +
 				data[i].quantity
-
 			);
-
 		}
 	})
-
+	// likeToUpdate();
+	connection.end();
 }
 
 function addInventory() {
@@ -149,39 +153,7 @@ function addInventory() {
 			)
 		})
 }
-// var query = connection.query(
-// 	"UPDATE products SET ? WHERE ?",
-// 	[
-// 		{
-// 			quantity: newTotal
-// 		},
-// 		{
-// 			id: answer.restock
-// 		}
-// 	],
-// 	function (err, res) {
-// 		console.log(" products updated!");
 
-// 		console.log(
-// 			"Id: " + data.id +
-// 			"  " + data.title +
-
-
-// 			" || Quantity: " +
-// 			data.quantity
-
-// 		);
-
-// Call deleteProduct AFTER the UPDATE completes
-//   deleteProduct();
-// 		}
-// 		);
-
-// })
-
-// })
-
-// }
 
 function addProduct() {
 	inquirer
@@ -234,4 +206,22 @@ function addProduct() {
 		})
 }
 
+function likeToUpdate() {
 
+	inquirer
+		.prompt({
+			name: "update",
+			type: "list",
+			message: "Would hat you like to add some inventory now?",
+			choices: ["Yes", "No"]
+		})
+		.then(function (answer) {
+
+			if (answer.update === "Yes") {
+				addInventory();
+			}
+			else if (answer.update === "No") {
+				connection.end();
+			}
+		})
+}
