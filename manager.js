@@ -184,18 +184,54 @@ function addInventory() {
 // }
 
 function addProduct() {
+	inquirer
+		.prompt([{
+			name: "newProduct",
+			type: "input",
+			message: "What is the name of the item you would like to add?"
+		},
+		{
+			name: "newAuthor",
+			type: "input",
+			message: "What is the authors name?"
 
+		},
+		{
+			name: "newDate",
+			type: "input",
+			message: "When was it published?"
+		},
+		{
+			name: "newRating",
+			type: "input",
+			message: "What is its rating?"
+		},
+		{
+			name: "newPrice",
+			type: "input",
+			message: "What is the price?"
+		},
+		{
+			name: "newQuantity",
+			type: "input",
+			message: "What quantity is available?"
+		}
+		])
+		.then(function (response) {
+			var query = connection.query("INSERT INTO books SET ?", {
+				title: response.newProduct,
+				author: response.newAuthor,
+				yearPublished: response.newDate,
+				rating: response.newRating,
+				price: response.newPrice,
+				quantity: response.newQuantity
 
+			},
+				function (err, res) {
+					displayProducts();
+				}
+			)
+		})
 }
 
 
-
-// function readProducts() {
-// 	console.log("Selecting all products...\n");
-// 	connection.query("SELECT * FROM books", function (err, res) {
-// 		if (err) throw err;
-// 		// Log all results of the SELECT statement
-// 		console.log(res);
-// 		connection.end();
-// 	});
-// }
