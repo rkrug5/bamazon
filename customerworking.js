@@ -122,6 +122,7 @@ function buyFunc() {
 					var quantity = res[0].quantity;
 					var cost = howMany * price;
 					var stockLeft = quantity - howMany;
+					var product_sales = product_sales + cost;
 
 					if (quantity >= howMany) {
 						console.log("The cost of your purchase today is: $" + cost);
@@ -133,7 +134,7 @@ function buyFunc() {
 						}]
 						)
 
-
+						var query = connection.query("UPDATE departments SET ? WHERE ?", [{ product_sales: product_sales }, { id: response.buyingchoice }])
 
 
 
