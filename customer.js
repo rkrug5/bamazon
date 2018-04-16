@@ -1,5 +1,9 @@
+
+
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var numberOfProducts;
+
 
 var connection = mysql.createConnection({
 	host: "localhost",
@@ -37,9 +41,10 @@ function displayProducts() {
 
 			throw err;
 		}
-		// console.log(data);
+		var idArray = [];
 
-		for (var i = 0; i < 10; i++) {
+
+		for (let i = 0; i < data.length; i++) {
 			console.log(
 				"Id: " + data[i].id +
 				"  " + data[i].title +
@@ -49,9 +54,16 @@ function displayProducts() {
 				data[i].price +
 				" || Quantity: " +
 				data[i].quantity
-			);
-		}
 
+			);
+			idArray.push(data[i].id);
+
+			// for (var j = 0, data.length )
+		}
+		// console.log(data.length);
+		numberOfProducts = idArray.length;
+		console.log(idArray);
+		console.log(numberOfProducts);
 		start();
 
 	})
@@ -103,14 +115,13 @@ function buyFunc() {
 		)
 		.then(function (response) {
 
-			if (response.buyingChoice === 1) {
+			if (parseInt(response.buyingChoice) < parseInt(data.length)) {
 				// buyIt();
 				console.log("works");
 			}
-
-
 			else {
 				console.log("Please enter a valid selection");
+				buyFunc();
 			}
 
 
