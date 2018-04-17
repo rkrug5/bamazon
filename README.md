@@ -32,3 +32,8 @@ Lastly, if they choose to add an item, they will add all the relevant info, and 
 ![Alt text](images/manager4.jpg?raw=true "manager interface")
 
 
+![Alt text](images/manager5.jpg?raw=true "manager interface")
+
+
+
+
