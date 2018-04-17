@@ -11,7 +11,11 @@ After enetering the item id# and how many of them they would like, it returns th
 
 ![Alt text](images/itemamount.jpg?raw=true "stuff")
 
-In the manager view, if they choose the first option, it will display the table of available items.
+In the manager program, the first thing the user will see is a list of available options.  
+
+![Alt text](images/manager0.jpg?raw=true "manager interface")
+
+If they choose the first option, it will display the table of available items.
 
 ![Alt text](images/manager1.jpg?raw=true "manager interface")
 
