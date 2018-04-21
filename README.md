@@ -13,7 +13,7 @@ This app is a command line interface (CLI) tool used to keep track of informatio
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 
-First, in order to have functionality and persistence of information, we used mysql.  In order to get that set up.  Open a local instance of mysql and refer to the *bamazon.sql* file.  This acts as both a schema and seeds for the initial table/database.  
+First, in order to have functionality and persistence of information, we used mysql.  In order to get that set up.  Open a local instance of mysql and refer to the **bamazon.sql** file.  This acts as both a schema and seeds for the initial table/database.  
 
 ![Alt text](images/bamazonschema.jpg?raw=true "start")
 
