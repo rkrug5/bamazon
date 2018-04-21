@@ -93,20 +93,22 @@ function lowInventory() {
 
 		if (err) throw err;
 
-		if (data.length == 0) {
-			console.log("There are no low inventory items.")
+		else if (data.length == 0) {
+			console.log("There are no items with inventory < 5.")
 		}
-		for (let i = 0; i < data.length; i++) {
-			console.log(
-				"Id: " + data[i].id +
-				"  " + data[i].title +
-				" || Author: " +
-				data[i].author +
-				" || Price: " +
-				data[i].price +
-				" || Quantity: " +
-				data[i].quantity
-			);
+		else {
+			for (let i = 0; i < data.length; i++) {
+				console.log(
+					"Id: " + data[i].id +
+					"  " + data[i].title +
+					" || Author: " +
+					data[i].author +
+					" || Price: " +
+					data[i].price +
+					" || Quantity: " +
+					data[i].quantity
+				);
+			}
 		}
 	})
 
