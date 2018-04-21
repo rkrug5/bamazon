@@ -1,11 +1,10 @@
--- if a table exists already, get rid of ti to make space for our new one
-DROP DATABASE IF EXISTS bamazonDB;
-
+-- if a table exists already, get rid of it to make space for our new one
+-- i will keep it edited out so that you can select all and run it without accidentally deleting a db we are already working with,  but can still have it written out in case we need to run it
+--DROP DATABASE IF EXISTS bamazonDB;
 
 CREATE DATABASE bamazonDB;
 
 USE bamazonDB;
-
 
 CREATE TABLE books (
 	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, 
@@ -14,12 +13,9 @@ CREATE TABLE books (
 	`yearPublished` INT (4) NOT NULL, 
 	price FLOAT (6, 2), 
 	rating FLOAT (5, 2),
-	quantity INT (10)
+	quantity INT (10), 
+	department VARCHAR (30) NOT NULL
 );
-
-
-
-
 
 
 INSERT INTO books (title, author, `yearPublished`, price, rating, quantity, department)

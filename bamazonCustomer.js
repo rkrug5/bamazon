@@ -30,8 +30,6 @@ connection.connect(function (err, res) {
 function displayProducts() {
 	// connect to the mysql server and sql database
 
-
-	// createProduct();
 	connection.query('SELECT * FROM books', function (err, data) {
 
 		if (err) {
@@ -153,32 +151,13 @@ function buyFunc() {
 			)
 
 
-			// function (err, res) {
-			// 	var price = answer[0].price;
-			// 	var total = price * answer.howMany
-
-
-
-			// 	if (numberInStock > answer.howMany) {
-
-			// 		console.log("Thank You, Your total is: $" + total);
-			// 	}
-
-			// 	else {
-
-
-			// 		console.log("Sorry, we don't have that many in stock");
-			// 	}
-
 		})
 
 
 }
 
 
-// connection.end();
 
-// });
 function buySomethingElse() {
 
 	inquirer

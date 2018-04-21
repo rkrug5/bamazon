@@ -1,6 +1,22 @@
 # bamazon
 i like books, anybody else like books? (node &amp; mysql app)
 
+Hello, 
+
+The following is for anybody interested in how this project works and for those with the unfortunate task of grading it (._. )
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+This app is used to keep track of information about products housed in a store 'like' "Amazon".  
+
+First, in order to have functionality and persistence of information, we used mysql.  In order to get that set up.  Open a local instance of mysql and refer to the bamazon.sql file.  This acts as both a schema and seeds for the initial table/database.  
+
+![Alt text](images/bamazonschema.jpg?raw=true "start")
+
+Copy lines 5 - 50 (or perhaps include an uncommented line 4 if you already have an unneeded bamazonDB in your instance) and execute them in mysql workbench.  
+
+
 
 
 So, the first thing my program does is print all the available items and asks the customer if they would like to buy something or leave.  
