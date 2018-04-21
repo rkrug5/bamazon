@@ -93,6 +93,9 @@ function lowInventory() {
 
 		if (err) throw err;
 
+		if (data.length == 0) {
+			console.log("There are no low inventory items.")
+		}
 		for (let i = 0; i < data.length; i++) {
 			console.log(
 				"Id: " + data[i].id +
@@ -106,6 +109,9 @@ function lowInventory() {
 			);
 		}
 	})
+
+
+
 	// likeToUpdate();
 	connection.end();
 }

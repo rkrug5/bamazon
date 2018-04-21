@@ -30,7 +30,7 @@ Once this is complete you should be ready to see the program in action.
 ----------------------------------------------------------------
 
 
-Run 'node bamazonCustomer.js'
+**Run 'node bamazonCustomer.js'**
 
 
 
@@ -38,9 +38,29 @@ So, the first thing my program does is print all the available items and asks th
 
 ![Alt text](images/firstoption.jpg?raw=true "start")
 
-After enetering the item id# and how many of them they would like, it returns their cost and asks the customer what else they would like to do.
+I was able to include entry validation for this question, but ran into issues trying to implement it on other questions later on.  (This is an improvement I can make in the future.)
+
+If the customer wishes to leave, they will get a parting message and the connection will end.  If, on the other hand, the customer wishes to buy something, they will be prompted to enter which item and how many they would like.  
+
+
+My program then checks if that quantity of the item is available.  If it is not, it will alert them that the order is not possible to fulfill.  
+
+![Alt text](images/toomany.jpg?raw=true "stuff")
+
+
+If it is possible, it will return a price and ask them if they would like to buy something else.  
 
 ![Alt text](images/itemamount.jpg?raw=true "stuff")
+
+Ideally, it should wait for an answer to this folllowup question, but right now there is a bug that ends the connection and dumps the user out of the program.  
+
+That is the end of what can be done in the bamazonCustomer.js file.  
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+**To access the manager view, run 'node bamazonManager.js'**
+
 
 In the manager program, the first thing the user will see is a list of available options.  
 
