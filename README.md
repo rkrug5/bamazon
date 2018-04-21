@@ -110,5 +110,5 @@ bamazonSupervisor.js is still very much a work in progress.  I won't say much ab
 ![Alt text](images/Bamazon.png?raw=true "manager interface")
 
 
-Enjoy! (the above image was 'borrowed' from the interweb)
+Enjoy! (the above image was 'borrowed' from http://blog.prankdial.com/prank-drop-cyber-monday-problems-us-no-more-fish-chips-uk/))
 
