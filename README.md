@@ -8,7 +8,7 @@ The following is for anybody interested in how this project works and for those 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 
-This app is a command line interface (CLI) tool used to keep track of information about products housed in a store 'like' "Amazon".  Customers can access the information to buy products, and managers can access it to view stores, identify products with dwindling supplies, replenish stock, and add new items.
+This app is a command line interface (CLI) tool used to keep track of information about products housed in a store 'like' "Amazon".  Customers can access the information to buy products, and managers can access it to view inventory, identify products with dwindling supplies, replenish stock, and add new items.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -75,7 +75,7 @@ If they choose the first option, it will display the table of available items an
 
 ![Alt text](images/manager1.jpg?raw=true "manager interface")
 
-If they choose the second option, they will see the invenotry items with quantity < 5 and the connection will end.
+If they choose the second option, they will see the inventory items with quantity < 5 and the connection will end.
 
 ![Alt text](images/manager2.jpg?raw=true "manager interface")
 
