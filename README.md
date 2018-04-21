@@ -13,7 +13,7 @@ This app is a command line interface (CLI) tool used to keep track of informatio
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 
-First, in order to have functionality and persistence of information, we used mysql.  In order to get that set up.  Open a local instance of mysql and refer to the bamazon.sql file.  This acts as both a schema and seeds for the initial table/database.  
+First, in order to have functionality and persistence of information, we used mysql.  In order to get that set up.  Open a local instance of mysql and refer to the *bamazon.sql* file.  This acts as both a schema and seeds for the initial table/database.  
 
 ![Alt text](images/bamazonschema.jpg?raw=true "start")
 
@@ -79,7 +79,7 @@ If they choose the second option, they will see the inventory items with quantit
 
 ![Alt text](images/manager2.jpg?raw=true "manager interface")
 
-*Note: If you populated the table and didn't buy much, there is a possibility that there are no low inventory items.  If this is the case,it will log that info.  
+*Note: If you populated the table and didn't buy much, there is a possibility that there are no low inventory items.  If this is the case, it will log that info.  
 
 ![Alt text](images/inventoryalert.jpg?raw=true "manager interface")
 
