@@ -102,7 +102,7 @@ That is the end of what bamazonManager.js can do.
 ------------------------------------------------------------------------
 
 
-bamazonSupervisor is still very much a work in progress.  I won't say much about it except that the schema and seeds for the table `departments` is in the bamazon.sql file.  I hope to return to this section of the assignment at a later date.  
+bamazonSupervisor.js is still very much a work in progress.  I won't say much about it except that the schema and seeds for the table `departments` is in the bamazon.sql file.  I hope to return to this section of the assignment at a later date.  
 
 ------------------------------------------------------------------------
 
